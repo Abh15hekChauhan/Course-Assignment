@@ -9,13 +9,13 @@ body{
 h1{
     text-align: center;
 }
-.section,.navbar>.container, .navbar>.container-fluid, .navbar>.container-lg, .navbar>.container-md, .navbar>.container-sm, .navbar>.container-xl, .navbar>.container-xxl{
+section,.navbar>.container, .navbar>.container-fluid, .navbar>.container-lg, .navbar>.container-md, .navbar>.container-sm, .navbar>.container-xl, .navbar>.container-xxl{
     background-color: #ac9f9f;
     font-size: 35px;
     margin: 0;
     padding: 0;
 }
-.container-fluid .first-sec .first-sp{
+.container-fluid .first-sec .first-sp,.container-fluid .second-sec .second-sp,.container-fluid .third-sec .third-sp{
     position: relative;
     font-size: 1.5em;
 
@@ -24,7 +24,7 @@ h1{
     padding: 0 10px 0 10px;
     display: block;
 }
-.container-fluid .first-sec{
+.container-fluid .first-sec,.second-sec,.third-sec{
     background-color: #ac9f9f;
     border-radius: 5px;
 
@@ -32,6 +32,7 @@ h1{
     padding-left: 10px;
     margin: 10px;
     height: 100%;
+    float: left;
 }
 .navbar{
     padding: 0;
@@ -50,7 +51,7 @@ span:target{
     margin-left: 2.5rem;
 }
 h1{
-
+    
     margin-top: 2rem;
     margin-bottom: 3rem;
 }
@@ -59,18 +60,27 @@ h1{
 }
 
 @media (min-width:992px){
-
+    
+    .container-fluid .first-sec,.second-sec,.third-sec{
+        width: 31%;
+    }
     .navbar-nav{
         display: none;
     }
-
+    button{
+        display: none;
+    }
+    
 } 
 @media (max-width:991px){
-
-    .section{
+    button{
+        display: none;
+    }
+    
+    section{
         margin: 0 5rem 0 5rem;
     }
-
+    
     .navbar-toggler{
         width: 4rem;
         height: 4rem;
@@ -92,3 +102,29 @@ h1{
         font-size: 2.1em;
     }
 } 
+
+@media (max-width:767px){
+    
+    .container-fluid .first-sec,.container-fluid .second-sec,.container-fluid .third-sec{
+        width: 95%;
+        float: left;
+    }
+    button{
+        display: block;
+    }
+    
+}
+@media (min-width:768px) and (max-width:991px){
+    .navbar-nav{
+        display: none;
+    }
+    .container-fluid .third-sec{
+        width: 98%;
+    }
+    .container-fluid .first-sec,.second-sec{
+        width: 47%;
+    }
+    .container-fluid .second-sec{
+        float: right;
+    }
+}
